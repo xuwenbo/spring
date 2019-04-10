@@ -39,11 +39,13 @@
             <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-oxm</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
@@ -61,6 +63,7 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
@@ -177,6 +180,7 @@
     </dependencies>
 
     <build>
+        <!-- 自动生成xml bean dao插件 -->
         <plugins>
             <plugin>
                 <groupId>org.mybatis.generator</groupId>

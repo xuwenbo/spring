@@ -10,7 +10,7 @@
     <display-name>Archetype Created Web Application</display-name>
 
     <!-- Spring和mybatis的配置文件 -->
-    <context-param>
+    <context-param> <!-- 该元素用来声明应用范围内的上下文初始化参数 -->
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:/spring/spring-mybatis.xml</param-value>
     </context-param>
