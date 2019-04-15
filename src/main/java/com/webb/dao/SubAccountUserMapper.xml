@@ -448,4 +448,302 @@
       modified = #{modified,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <resultMap id="BaseResultMap" type="com.webb.dao.SubAccountUser">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="account" jdbcType="VARCHAR" property="account" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="job_number" jdbcType="VARCHAR" property="jobNumber" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="role_id" jdbcType="INTEGER" property="roleId" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="resource" jdbcType="VARCHAR" property="resource" />
+    <result column="created" jdbcType="TIMESTAMP" property="created" />
+    <result column="modified" jdbcType="TIMESTAMP" property="modified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, account, real_name, job_number, mobile, role_id, password, resource, created, 
+    modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sub_account_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sub_account_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.webb.dao.SubAccountUser">
+    insert into sub_account_user (id, account, real_name, 
+      job_number, mobile, role_id, 
+      password, resource, created, 
+      modified)
+    values (#{id,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, 
+      #{jobNumber,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{roleId,jdbcType=INTEGER}, 
+      #{password,jdbcType=VARCHAR}, #{resource,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, 
+      #{modified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.webb.dao.SubAccountUser">
+    insert into sub_account_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="account != null">
+        account,
+      </if>
+      <if test="realName != null">
+        real_name,
+      </if>
+      <if test="jobNumber != null">
+        job_number,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="resource != null">
+        resource,
+      </if>
+      <if test="created != null">
+        created,
+      </if>
+      <if test="modified != null">
+        modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="account != null">
+        #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobNumber != null">
+        #{jobNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null">
+        #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="resource != null">
+        #{resource,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null">
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modified != null">
+        #{modified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.webb.dao.SubAccountUser">
+    update sub_account_user
+    <set>
+      <if test="account != null">
+        account = #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        real_name = #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobNumber != null">
+        job_number = #{jobNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null">
+        role_id = #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="resource != null">
+        resource = #{resource,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null">
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modified != null">
+        modified = #{modified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.webb.dao.SubAccountUser">
+    update sub_account_user
+    set account = #{account,jdbcType=VARCHAR},
+      real_name = #{realName,jdbcType=VARCHAR},
+      job_number = #{jobNumber,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      role_id = #{roleId,jdbcType=INTEGER},
+      password = #{password,jdbcType=VARCHAR},
+      resource = #{resource,jdbcType=VARCHAR},
+      created = #{created,jdbcType=TIMESTAMP},
+      modified = #{modified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.webb.dao.SubAccountUser">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="account" jdbcType="VARCHAR" property="account" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="job_number" jdbcType="VARCHAR" property="jobNumber" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="role_id" jdbcType="INTEGER" property="roleId" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="resource" jdbcType="VARCHAR" property="resource" />
+    <result column="created" jdbcType="TIMESTAMP" property="created" />
+    <result column="modified" jdbcType="TIMESTAMP" property="modified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, account, real_name, job_number, mobile, role_id, password, resource, created, 
+    modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sub_account_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sub_account_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.webb.dao.SubAccountUser">
+    insert into sub_account_user (id, account, real_name, 
+      job_number, mobile, role_id, 
+      password, resource, created, 
+      modified)
+    values (#{id,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, 
+      #{jobNumber,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{roleId,jdbcType=INTEGER}, 
+      #{password,jdbcType=VARCHAR}, #{resource,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, 
+      #{modified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.webb.dao.SubAccountUser">
+    insert into sub_account_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="account != null">
+        account,
+      </if>
+      <if test="realName != null">
+        real_name,
+      </if>
+      <if test="jobNumber != null">
+        job_number,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="resource != null">
+        resource,
+      </if>
+      <if test="created != null">
+        created,
+      </if>
+      <if test="modified != null">
+        modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="account != null">
+        #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobNumber != null">
+        #{jobNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null">
+        #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="resource != null">
+        #{resource,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null">
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modified != null">
+        #{modified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.webb.dao.SubAccountUser">
+    update sub_account_user
+    <set>
+      <if test="account != null">
+        account = #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        real_name = #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobNumber != null">
+        job_number = #{jobNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null">
+        role_id = #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="resource != null">
+        resource = #{resource,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null">
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modified != null">
+        modified = #{modified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.webb.dao.SubAccountUser">
+    update sub_account_user
+    set account = #{account,jdbcType=VARCHAR},
+      real_name = #{realName,jdbcType=VARCHAR},
+      job_number = #{jobNumber,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      role_id = #{roleId,jdbcType=INTEGER},
+      password = #{password,jdbcType=VARCHAR},
+      resource = #{resource,jdbcType=VARCHAR},
+      created = #{created,jdbcType=TIMESTAMP},
+      modified = #{modified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
 </mapper>
