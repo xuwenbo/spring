@@ -1,6 +1,6 @@
 package com.webb.controller;
 
-import com.webb.dao.UserT;
+import com.webb.domain.UserT;
 import com.webb.service.IUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

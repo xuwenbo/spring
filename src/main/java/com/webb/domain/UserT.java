@@ -1,4 +1,4 @@
-package com.webb.dao;
+package com.webb.domain;
 
 public class UserT {
     private Integer id;

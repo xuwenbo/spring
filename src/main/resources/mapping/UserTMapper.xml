@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.webb.dao.UserTMapper" >
-  <resultMap id="BaseResultMap" type="com.webb.dao.UserT" >
+  <resultMap id="BaseResultMap" type="com.webb.domain.UserT" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="user_name" property="userName" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
@@ -24,14 +24,14 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
 
-  <insert id="insert" parameterType="com.webb.dao.UserT" >
+  <insert id="insert" parameterType="com.webb.domain.UserT" >
     insert into user_t (id, user_name, password, 
       age)
     values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{age,jdbcType=INTEGER})
   </insert>
 
-  <insert id="insertSelective" parameterType="com.webb.dao.UserT" >
+  <insert id="insertSelective" parameterType="com.webb.domain.UserT" >
     insert into user_t
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -62,7 +62,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.webb.dao.UserT" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.webb.domain.UserT" >
     update user_t
     <set >
       <if test="userName != null" >
@@ -77,7 +77,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.webb.dao.UserT" >
+  <update id="updateByPrimaryKey" parameterType="com.webb.domain.UserT" >
     update user_t
     set user_name = #{userName,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
